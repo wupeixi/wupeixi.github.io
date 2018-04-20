@@ -47,6 +47,77 @@
     <h1 class="title"><a href="/title/">Set up Blog with hexo</a></h1>
   
 
+    <time datetime="2018-04-20T11:02:00.000Z">
+  <span class="day">20</span><span class="month">Apr</span>
+</time>
+  </header>
+  <div class="entry-content">
+    
+      <p>##ubuntu安装</p>
+<h3 id="1-制作U盘启动盘"><a href="#1-制作U盘启动盘" class="headerlink" title="1.制作U盘启动盘"></a>1.制作U盘启动盘</h3><ol>
+<li><p>官网或开源镜像站下载ubuntu server版iso文件（我是在<a href="http://mirrors.163.com/" target="_blank" rel="noopener">网易开源镜像站</a>下载的16.04.4版）;</p>
+</li>
+<li><p>使用UltraISO或其他软件刻录iso文件到U盘。注意！再拷贝一份ios到U盘根目录（后面安装会用到）,建议重命名为<code>ubuntu</code>，方便之后输入。</p>
+</li>
+</ol>
+<h3 id="2-磁盘分区"><a href="#2-磁盘分区" class="headerlink" title="2.磁盘分区"></a>2.磁盘分区</h3><p>选定一个磁盘（我选的是装win10的ssd），给ubuntu系统分区，分区可用windows系统自带功能（win+x打开磁盘管理，对要操作的磁盘点击右键，选择压缩卷），也可用其他软件（关于分区的大小，按个人而定吧，我分的是30g）。</p>
+<h3 id="3-BIOS设置"><a href="#3-BIOS设置" class="headerlink" title="3.BIOS设置"></a>3.BIOS设置</h3><p>重启电脑，进入BIOS，将security boot设置为disable，然后在boot里设置U盘为首启动项，重启。</p>
+<h3 id="4-安装"><a href="#4-安装" class="headerlink" title="4.安装"></a>4.安装</h3><p>选择Install ubuntu，按提示操作。中间会出现无法读取CD-ROM的问题，解决方案：</p>
+<ol>
+<li><p>按Alt+F2进入终端</p>
+</li>
+<li><p>输入<code>df -h</code>查看USB盘符信息，根据自己U盘大小辨认出U盘的名字（我的是<code>/dev/sdc4</code>）</p>
+</li>
+<li><p>挂载USB到mnt目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">umount /dev/sdc4</span><br><span class="line">mount /dev/sdc4 /mnt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>挂载iso文件到/cdrom目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount -o loop /mnt/ubuntu.iso /cdrom    #这里的ubuntu.iso就是刚才拷贝的iso文件</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Alt+F1返回安装界面，继续按提示安装，分区时我选择的是向导最大连续空闲空间，让程序自动分区。<strong><em>最后安装软件，记得选上openssh server。</em></strong></p>
+</li>
+</ol>
+<p>至此，ubuntu安装成功！</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://www.cnblogs.com/hf19950918/p/8505151.html" target="_blank" rel="noopener">https://www.cnblogs.com/hf19950918/p/8505151.html</a></p>
+
+    
+    
+    <footer class="meta">
+      
+  <div class="cats">
+<a href="/categories/Diary/">Diary</a></div>
+
+      
+  <div class="tags">
+<a href="/tags/ubuntu/">ubuntu</a></div>
+
+      
+    </footer>
+    
+  </div>
+  
+</article>
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <header>
+    
+  
+    <h1 class="title"><a href="/title/">Set up Blog with hexo</a></h1>
+  
+
     <time datetime="2018-04-20T07:00:00.000Z">
   <span class="day">20</span><span class="month">Apr</span>
 </time>
